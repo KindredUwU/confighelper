@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>CapsuleFarmerEvolved config helper</title>
+        <style>
+            code {
+                background-color: #eee;
+                border: 1px solid #999;
+                display: block;
+                width: 20%;
+                padding: 20px;
+            }           
+        </style>
+    </head>
+
+    <body>
+        <h1>CapsuleFarmerEvolved config helper</h1>
+        <h3>The account name will only be visible in the software.<br>The username and password are the ones you use to log into<a href="https://lolesports.com">lolesports.com</a><br>Your details are not sent to us, everything is done in your browser.<br>(Open sourced on github: <a href="https://github.com/bblxssm/confighelper">click here</a>)<br>When you're done with adding accounts, copy the config below and paste it into config.yaml<br>For any issues open a ticket in the help channel.<br>- Six#9552</h3>
+        <label for="accountname">Account name:</label>
+        <input type="text" name="accountname" id="accountname"><br>
+        <label for="username">Riot username:</label>
+        <input type="text" name="username" id="username"><br>
+        <label for="password">Riot password:</label>
+        <input type="password" name="password" id="password">
+        <button onclick="addAccount()">Add account</button>
+
+        <h2>Your config:</h2>
+        <code id="config">accounts:</code>
+        <script>
+            function addAccount() {
+                var accountname = document.getElementById("accountname").value;
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                document.getElementById("config").innerHTML+="<br>&nbsp;&nbsp;"+accountname+":<br>&nbsp;&nbsp;&nbsp;&nbsp;username:&nbsp;\""+username+"\"<br>&nbsp;&nbsp;&nbsp;&nbsp;password:&nbsp;\""+password +"\""
+            }
+        </script>
+    </body>
+</html>
